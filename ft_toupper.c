@@ -1,41 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psmolin <psmolin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 14:21:35 by psmolin           #+#    #+#             */
-/*   Updated: 2025/03/10 18:55:32 by psmolin          ###   ########.fr       */
+/*   Updated: 2025/03/10 20:25:16 by psmolin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+int	ft_toupper(int c)
 {
-	size_t	i;
-
-	if (((char *)dst > (char *)src) && ((char *)dst < (char *)src + len))
-	{
-		i = len - 1;
-		while (i > 0)
-		{
-			((char *) dst)[i] = ((char *) src)[i];
-			i--;
-		}
-		((char *) dst)[0] = ((char *) src)[0];
-	}
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
 	else
-	{
-		i = 0;
-		while (i < len)
-		{
-			((char *) dst)[i] = ((char *) src)[i];
-			i++;
-		}
-	}
-	return (dst);
+		return (c);
 }
 
 // #include <stdio.h>
@@ -44,24 +26,12 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 // int	main (void)
 // {
-// 	unsigned char a[10];
-// 	unsigned char b[10];
-// 	int i;
+// 	printf("%d Vs %d \n", ft_toupper('a'), toupper('a'));
+// 	printf("%d Vs %d \n", ft_toupper('A'), toupper('A'));
+// 	printf("%d Vs %d \n", ft_toupper(-6), toupper(-6));
+// 	printf("%d Vs %d \n", ft_toupper(256), toupper(256));
+// 	printf("%d Vs %d \n", ft_toupper('q'), toupper('q'));
+// 	printf("%d Vs %d \n", ft_toupper('\n'), toupper('\n'));
 
-// 	memset(a, 'A', 10);
-// 	i = 0;
-// 	while (i<10)
-// 	{
-// 		printf("%c ", a[i] );
-// 		i++;
-// 	}
-// 	printf("\n");
-// 	ft_memmove(b, a, 10);
-// 	i = 0;
-// 	while (i<10)
-// 	{
-// 		printf("%c ", b[i] );
-// 		i++;
-// 	}
-// 	printf("\n");
+// 	return (0);
 // }

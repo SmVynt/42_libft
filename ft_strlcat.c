@@ -6,7 +6,7 @@
 /*   By: psmolin <psmolin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 14:21:35 by psmolin           #+#    #+#             */
-/*   Updated: 2025/03/10 18:52:18 by psmolin          ###   ########.fr       */
+/*   Updated: 2025/03/10 20:17:41 by psmolin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,22 @@ size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t size)
 
 // int	main (void)
 // {
-// 	char dest[10];
+// 	char dest1[15] = "Hello";
+// 	char dest2[5] = "Hi";
+// 	char dest3[3] = "A";
+// 	char dest4[1] = "";
+// 	char dest5[10] = "1234"; // `dstsize` = `strlen(dst) + 1`
 
-//     printf("R: %zu | Dest: %s\n", strlcat(dest, "Hello", 6), dest);
-//     printf("R: %zu | Dest: %s\n", ft_strlcat(dest, "Hello123", 3), dest);
-//     printf("R: %zu\n", ft_strlcat(dest, "Hello", 0));
+// printf("Re: %zu | Dest: %s\n", ft_strlcat(dest1,
+// " World!", sizeof(dest1)), dest1);
+// printf("Re: %zu | Dest: %s\n", ft_strlcat(dest2,
+// "Test", sizeof(dest2)), dest2);
+// printf("Re: %zu | Dest: %s\n", ft_strlcat(dest3,
+// "LongString", sizeof(dest3)), dest3);
+// printf("Re: %zu\n", ft_strlcat(dest4, "Hello",
+// sizeof(dest4))); // Should return len_src
+// printf("Re: %zu | Dest: %s\n", ft_strlcat(dest5,
+// "56789", sizeof(dest5)), dest5);
 
-//     return 0;
+//     return (0);
 // }

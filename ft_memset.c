@@ -6,7 +6,7 @@
 /*   By: psmolin <psmolin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 14:21:35 by psmolin           #+#    #+#             */
-/*   Updated: 2025/03/10 16:56:25 by psmolin          ###   ########.fr       */
+/*   Updated: 2025/03/10 20:16:39 by psmolin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	*ft_memset(void *b, int c, size_t len)
 // 		i++;
 // 	}
 // 	printf("\n");
-// 	ft_memset(a, 'B', 10);
+// 	ft_memset(a, 'B', 8);
 // 	i = 0;
 // 	while (i<10)
 // 	{
