@@ -6,7 +6,7 @@
 /*   By: psmolin <psmolin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 14:21:35 by psmolin           #+#    #+#             */
-/*   Updated: 2025/03/11 20:20:11 by psmolin          ###   ########.fr       */
+/*   Updated: 2025/03/11 21:03:10 by psmolin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <unistd.h>
 #include <ctype.h>
 #include <string.h>
+#include <fcntl.h>
 
 // Extra functions for testing
 void    print_split_result(char **result)
@@ -187,6 +188,65 @@ int	main (void)
 	test_ft_striteri(striteri_s2, c_shift_char);
 	test_ft_striteri(striteri_s3, c_to_upper_if_even);
 	test_ft_striteri(NULL, c_to_upper_if_even);
+	printf("\n");
+
+	//putchar
+	printf("ft_putchar_fd\n");
+	printf("Test1: to stdout -> \n");
+	ft_putchar_fd('A', 1);
+	ft_putchar_fd('\n', 1);
+	int file_d = open("output_putchar.txt", O_CREAT | O_WRONLY | O_TRUNC, 0644);
+	if (file_d == -1)
+		perror("Error opening file");
+	else
+	{
+		ft_putchar_fd('B', file_d);
+		ft_putchar_fd('\n', file_d);
+		close(file_d);
+		printf("Test 2: check 'output_putchar.txt'\n");
+	}
+	printf("Test 3: invalid fd (-1) -> ");
+	ft_putchar_fd('C', -1);
+	printf(" (No output expected)\n");
+	printf("\n");
+
+	//putstr
+	printf("ft_putstr_fd\n");
+	printf("Test1: to stdout -> \n");
+	ft_putstr_fd("HelloWorld", 1);
+	ft_putstr_fd("\n", 1);
+	int file_d1 = open("output_putstr.txt", O_CREAT | O_WRONLY | O_TRUNC, 0644);
+	if (file_d1 == -1)
+		perror("Error opening file");
+	else
+	{
+		ft_putstr_fd("HelloWorld", file_d1);
+		ft_putstr_fd("\n", file_d1);
+		close(file_d1);
+		printf("Test 2: check 'output_putstr.txt'\n");
+	}
+	printf("Test 3: invalid fd (-1) -> ");
+	ft_putstr_fd("HelloWorld", -1);
+	printf(" (No output expected)\n");
+	printf("\n");
+	
+	//putendl
+	printf("ft_putendl_fd\n");
+	printf("Test1: to stdout -> \n");
+	ft_putendl_fd("HelloWorld", 1);
+	int file_d2 = open("output_putendl.txt", O_CREAT | O_WRONLY | O_TRUNC, 0644);
+	if (file_d2 == -1)
+		perror("Error opening file");
+	else
+	{
+		ft_putendl_fd("HelloWorld", file_d2);
+		ft_putendl_fd("\n", file_d2);
+		close(file_d2);
+		printf("Test 2: check 'output_putendl.txt'\n");
+	}
+	printf("Test 3: invalid fd (-1) -> ");
+	ft_putendl_fd("HelloWorld", -1);
+	printf(" (No output expected)\n");
 	printf("\n");
 
 	// TURN ON FOR LEAKS TEST
