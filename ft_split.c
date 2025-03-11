@@ -6,53 +6,88 @@
 /*   By: psmolin <psmolin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 14:21:35 by psmolin           #+#    #+#             */
-/*   Updated: 2025/03/11 16:01:03 by psmolin          ###   ########.fr       */
+/*   Updated: 2025/03/11 17:58:02 by psmolin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_split(char const *s, char c)
+static size_t	ft_word_count(char const *s, char c)
 {
-	char	*s3;
 	size_t	i;
-	size_t	start;
-	size_t	end;
+	size_t	wc;
+	char	prev;
 
-	// if (!s1 || !set)
-	// 	return (NULL);
-	// start = 0;
-	// while (ft_chinst(set, s1[start]) && s1[start])
-	// 	start++;
-	// end = ft_strlen((char *)s1) - 1;
-	// while (ft_chinst(set, s1[end]) && end > start)
-	// 	end--;
-	// end++;
-	// s3 = (char *)malloc(end - start + 1);
-	// if (!s3)
-	// 	return (NULL);
-	// i = 0;
-	// while (i < end - start)
-	// {
-	// 	s3[i] = s1[start + i];
-	// 	i++;
-	// }
-	// s3[i] = '\0';
-	return (s3);
+	i = 0;
+	wc = 0;
+	prev = c;
+	while (s[i])
+	{
+		if (s[i] != c && prev == c)
+			wc++;
+		prev = s[i];
+		i++;
+	}
+	return (wc);
 }
 
-// #include <stdio.h>
-// #include <ctype.h>
-// #include <string.h>
+static size_t	ft_word_length(char const *s1, char c)
+{
+	size_t	len;
 
-// int	main(void)
-// {
-// 	char *s1 = "  .  .Hello .... ";
-// 	char *set = " .l";
-// 	char *s3;
+	len = 0;
+	while (s1[len] != '\0' && s1[len] != c)
+		len++;
+	return (len);
+}
 
-// 	s3 = ft_strtrim(s1, set);
-// 	printf("%s & %s -> %s\n", s1, set, s3);
-// 	free(s3);
-//     return (0);
-// }
+static void	ft_wrdcpy(char *dst, char const *src, char c)
+{
+	size_t	i;
+
+	i = 0;
+	while (src[i] != '\0' && src[i] != c)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+}
+
+static void	ft_freearray(char **split, size_t cur)
+{
+	while (cur > 0)
+	{
+		cur --;
+		free (split[cur]);
+	}
+	free (split);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**ret;
+	size_t	cur;
+
+	ret = (char **)malloc((ft_word_count(s, c) + 1) * sizeof(char *));
+	if (!ret)
+		return (NULL);
+	cur = 0;
+	while (*s)
+	{
+		if (*s != c && (cur == 0 || *(s - 1) == c))
+		{
+			ret[cur] = (char *)malloc(ft_word_length(s, c) + 1);
+			if (!ret[cur])
+			{
+				ft_freearray(ret, cur);
+				return (NULL);
+			}
+			ft_wrdcpy (ret[cur], s, c);
+			cur++;
+		}
+		s++;
+	}
+	ret[cur] = 0;
+	return (ret);
+}
