@@ -6,7 +6,7 @@
 /*   By: psmolin <psmolin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 14:21:35 by psmolin           #+#    #+#             */
-/*   Updated: 2025/03/11 21:03:10 by psmolin          ###   ########.fr       */
+/*   Updated: 2025/03/11 21:15:50 by psmolin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -248,6 +248,39 @@ int	main (void)
 	ft_putendl_fd("HelloWorld", -1);
 	printf(" (No output expected)\n");
 	printf("\n");
+
+	//putnbr
+	printf("ft_putnbr_fd\n");
+	printf("To stdout -> \n");
+	ft_putnbr_fd(145, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(-25647, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(-2147483648, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(1047483647, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(0, 1);
+	ft_putchar_fd('\n', 1);
+	int file_d3 = open("output_putnbr.txt", O_CREAT | O_WRONLY | O_TRUNC, 0644);
+	if (file_d3 == -1)
+		perror("Error opening file");
+	else
+	{
+		ft_putnbr_fd(25641, file_d3);
+		ft_putchar_fd('\n', file_d3);
+		ft_putnbr_fd(-2455641, file_d3);
+		ft_putchar_fd('\n', file_d3);
+		ft_putnbr_fd(0, file_d3);
+		ft_putchar_fd('\n', file_d3);
+		close(file_d3);
+		printf("Test 2: check 'output_putendl.txt'\n");
+	}
+	printf("Test 3: invalid fd (-1) -> ");
+	ft_putnbr_fd(404, -1);
+	printf(" (No output expected)\n");
+	printf("\n");
+
 
 	// TURN ON FOR LEAKS TEST
 	//while(1);
