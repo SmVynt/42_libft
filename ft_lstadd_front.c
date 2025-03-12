@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psmolin <psmolin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/10 14:21:35 by psmolin           #+#    #+#             */
-/*   Updated: 2025/03/12 15:53:22 by psmolin          ###   ########.fr       */
+/*   Created: 2025/03/12 13:27:07 by psmolin           #+#    #+#             */
+/*   Updated: 2025/03/12 14:23:00 by psmolin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	size_t	i;
-
-	if (!dst && !src && n > 0)
-		return (NULL);
-	i = 0;
-	while (i < n)
-	{
-		((char *) dst)[i] = ((char *) src)[i];
-		i++;
-	}
-	return (dst);
+	new->next = *lst;
+	*lst = new;
 }

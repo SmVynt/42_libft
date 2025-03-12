@@ -6,7 +6,7 @@
 #    By: psmolin <psmolin@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/11 16:14:14 by psmolin           #+#    #+#              #
-#    Updated: 2025/03/12 11:45:42 by psmolin          ###   ########.fr        #
+#    Updated: 2025/03/12 16:55:35 by psmolin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,8 +27,9 @@ OBJS = $(SRCS:.c=.o)
 #
 HEADERS = libft.h
 #
-#BONUS = ft_isalpha.c
-#BONUS_OBJS = $(BONUS:.c=.o)
+BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
+		ft_lstdelone.c ft_lstclear.c ft_lstiter.c
+BONUS_OBJS = $(BONUS:.c=.o)
 #
 CC = cc
 RM = rm -f
@@ -49,7 +50,7 @@ fclean: clean
 #
 re: fclean all
 #
-#bonus: $(OBJS) $(BONUS_OBJS)
-#	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+bonus: $(OBJS) $(BONUS_OBJS)
+	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 #
 .PHONY: all clean fclean re bonus
