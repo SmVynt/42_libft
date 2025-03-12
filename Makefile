@@ -6,7 +6,7 @@
 #    By: psmolin <psmolin@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/11 16:14:14 by psmolin           #+#    #+#              #
-#    Updated: 2025/03/11 21:10:55 by psmolin          ###   ########.fr        #
+#    Updated: 2025/03/12 11:45:42 by psmolin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,8 +25,10 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 OBJS = $(SRCS:.c=.o)
 #
-BONUS = ft_isalpha.c
-BONUS_OBJS = $(BONUS:.c=.o)
+HEADERS = libft.h
+#
+#BONUS = ft_isalpha.c
+#BONUS_OBJS = $(BONUS:.c=.o)
 #
 CC = cc
 RM = rm -f
@@ -47,7 +49,7 @@ fclean: clean
 #
 re: fclean all
 #
-bonus: $(OBJS) $(BONUS_OBJS)
-	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+#bonus: $(OBJS) $(BONUS_OBJS)
+#	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 #
 .PHONY: all clean fclean re bonus
