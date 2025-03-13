@@ -6,7 +6,7 @@
 #    By: psmolin <psmolin@student.42heilbronn.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/11 16:14:14 by psmolin           #+#    #+#              #
-#    Updated: 2025/03/12 16:55:35 by psmolin          ###   ########.fr        #
+#    Updated: 2025/03/13 18:21:07 by psmolin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ OBJS = $(SRCS:.c=.o)
 HEADERS = libft.h
 #
 BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
-		ft_lstdelone.c ft_lstclear.c ft_lstiter.c
+		ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 BONUS_OBJS = $(BONUS:.c=.o)
 #
 CC = cc

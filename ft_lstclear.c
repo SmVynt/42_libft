@@ -6,7 +6,7 @@
 /*   By: psmolin <psmolin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 13:27:07 by psmolin           #+#    #+#             */
-/*   Updated: 2025/03/12 16:52:33 by psmolin          ###   ########.fr       */
+/*   Updated: 2025/03/13 18:55:00 by psmolin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	while (*lst)
 	{
 		temp = (*lst)->next;
-		(*del)((*lst)->content);
+		del((*lst)->content);
 		free(*lst);
 		*lst = temp;
 	}
+	*lst = NULL;
 }
