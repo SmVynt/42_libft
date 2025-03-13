@@ -6,7 +6,7 @@
 /*   By: psmolin <psmolin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 14:21:35 by psmolin           #+#    #+#             */
-/*   Updated: 2025/03/12 12:15:21 by psmolin          ###   ########.fr       */
+/*   Updated: 2025/03/13 20:24:40 by psmolin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,18 +39,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	s2[i] = '\0';
 	return (s2);
 }
-
-// #include <stdio.h>
-// #include <ctype.h>
-// #include <string.h>
-
-// int	main(void)
-// {
-// 	char *s1 = "Hello";
-// 	char *s2;
-
-// 	s2 = ft_substr(s1, 2, 4);
-// 	printf("%s -> %s\n", s1, s2);
-
-//     return (0);
-// }

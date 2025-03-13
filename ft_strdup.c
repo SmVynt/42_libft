@@ -6,7 +6,7 @@
 /*   By: psmolin <psmolin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 14:21:35 by psmolin           #+#    #+#             */
-/*   Updated: 2025/03/12 12:13:30 by psmolin          ###   ########.fr       */
+/*   Updated: 2025/03/13 20:31:56 by psmolin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,3 @@ char	*ft_strdup(const char *s1)
 	s2[i] = '\0';
 	return (s2);
 }
-
-// #include <stdio.h>
-// #include <ctype.h>
-// #include <string.h>
-
-// int	main(void)
-// {
-// 	char *s1 = "Hello";
-// 	char *s2;
-
-// 	s2 = ft_strdup(s1);
-// 	printf("%s -> %s\n", s1, s2);
-
-//     return (0);
-// }

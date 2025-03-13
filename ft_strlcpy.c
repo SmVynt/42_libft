@@ -6,7 +6,7 @@
 /*   By: psmolin <psmolin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 14:21:35 by psmolin           #+#    #+#             */
-/*   Updated: 2025/03/13 18:36:15 by psmolin          ###   ########.fr       */
+/*   Updated: 2025/03/13 20:26:36 by psmolin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	dst[i] = '\0';
 	return (len);
 }
-
-// #include <stdio.h>
-// #include <ctype.h>
-// #include <string.h>
-
-// int	main (void)
-// {
-// 	char *a = "Hello";
-// 	char *b;
-
-// 	ft_strlcpy(b, a, 0);
-// 	printf("%s\n", b);
-// 	printf("%lu\n", ft_strlcpy(b, a, 3));
-// }

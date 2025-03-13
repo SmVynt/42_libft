@@ -37,21 +37,3 @@ int	ft_atoi(const char *str)
 	}
 	return ((int)(ret * neg));
 }
-
-// #include <stdio.h>
-// #include <ctype.h>
-// #include <string.h>
-// #include <stdlib.h>
-
-// int	main (void)
-// {
-// 	printf("%d vs %d\n", ft_atoi("-1024"), atoi("-1024"));
-// 	printf("%d vs %d\n", ft_atoi("1024a"), atoi("1024a"));
-// 	printf("%d vs %d\n", ft_atoi(" \n\t\v\f\r1024a"), atoi(" \n\t\v\f\r1024a"));
-// 	printf("%d vs %d\n", ft_atoi("+-1024a"), atoi("+-1024a"));
-// 	printf("%d vs %d\n", ft_atoi("+1024a"), atoi("+1024a"));
-// 	printf("%d vs %d\n", ft_atoi("+10 24a"), atoi("+10 24a"));
-// 	printf("%d vs %d\n", ft_atoi("-2147483648"), atoi("-2147483648"));
-// 	printf("%d vs %d\n", ft_atoi("21474836000"), atoi("21474836000"));
-// 	return (0);
-// }

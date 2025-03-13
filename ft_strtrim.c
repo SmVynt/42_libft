@@ -6,7 +6,7 @@
 /*   By: psmolin <psmolin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 14:21:35 by psmolin           #+#    #+#             */
-/*   Updated: 2025/03/11 15:28:32 by psmolin          ###   ########.fr       */
+/*   Updated: 2025/03/13 20:25:10 by psmolin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,19 +54,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	s3[i] = '\0';
 	return (s3);
 }
-
-// #include <stdio.h>
-// #include <ctype.h>
-// #include <string.h>
-
-// int	main(void)
-// {
-// 	char *s1 = "  .  .Hello .... ";
-// 	char *set = " .l";
-// 	char *s3;
-
-// 	s3 = ft_strtrim(s1, set);
-// 	printf("%s & %s -> %s\n", s1, set, s3);
-// 	free(s3);
-//     return (0);
-// }

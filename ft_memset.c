@@ -6,7 +6,7 @@
 /*   By: psmolin <psmolin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 14:21:35 by psmolin           #+#    #+#             */
-/*   Updated: 2025/03/10 20:16:39 by psmolin          ###   ########.fr       */
+/*   Updated: 2025/03/13 20:29:42 by psmolin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,32 +24,3 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
-
-// #include <stdio.h>
-// #include <ctype.h>
-// #include <string.h>
-
-// int	main (void)
-// {
-// 	unsigned char a[10];
-// 	int i;
-
-// 	ft_memset(a, 'A', 10);
-// 	i = 0;
-// 	while (i<10)
-// 	{
-// 		//printf("%c ", a[i] );
-// 		printf("a[%d] = %d (char: %c)\n", i, a[i], a[i]);
-// 		i++;
-// 	}
-// 	printf("\n");
-// 	ft_memset(a, 'B', 8);
-// 	i = 0;
-// 	while (i<10)
-// 	{
-// 		//printf("%c ", a[i] );
-// 		printf("a[%d] = %d (char: %c)\n", i, a[i], a[i]);
-// 		i++;
-// 	}
-// 	printf("\n");
-// }
