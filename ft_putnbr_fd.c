@@ -6,7 +6,7 @@
 /*   By: psmolin <psmolin@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 20:23:55 by psmolin           #+#    #+#             */
-/*   Updated: 2025/03/11 21:10:25 by psmolin          ###   ########.fr       */
+/*   Updated: 2025/04/04 11:06:22 by psmolin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,18 @@
 void	ft_putnbr_fd(int n, int fd)
 {
 	char	a;
+	int		sign;
 
-	if (n == -2147483648)
-		write(fd, "-2147483648", 11);
-	else
+	sign = 1;
+	if (n < 0)
 	{
-		if (n < 0)
-		{
-			write(fd, "-", 1);
-			n *= -1;
-		}
-		if (n >= 10)
-		{
-			ft_putnbr_fd(n / 10, fd);
-		}
-		a = n % 10 + '0';
-		write(fd, &a, 1);
+		write(fd, "-", 1);
+		sign *= -1;
 	}
+	if (n >= 10 || n <= -10)
+	{
+		ft_putnbr_fd((n / 10) * sign, fd);
+	}
+	a = (n % 10) * sign + '0';
+	write(fd, &a, 1);
 }
